@@ -1,0 +1,21 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: grakn
+  name: grakn
+spec:
+  #clusterIP: None
+  #expose the ports outside the cluster via port:targetPort tunnel
+  type: NodePort
+  ports:
+    - port: 4567
+      targetPort: 4567
+      name: grakn-engine
+  selector:
+    app: grakn
+  #set to minikube ip
+  externalIPs:
+  - 192.168.99.100
+

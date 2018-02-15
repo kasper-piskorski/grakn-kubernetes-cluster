@@ -6,16 +6,16 @@ metadata:
     app: grakn
   name: grakn
 spec:
-  #clusterIP: None
-  #expose the ports outside the cluster via port:targetPort tunnel
-  type: NodePort
+  clusterIP: None
   ports:
     - port: 4567
       targetPort: 4567
       name: grakn-engine
   selector:
     app: grakn
+  #expose the ports outside the cluster via port:targetPort tunnel
+  #type: NodePort
   #set to minikube ip
-  externalIPs:
-  - 192.168.99.100
+  #externalIPs:
+  #- 192.168.99.100
 

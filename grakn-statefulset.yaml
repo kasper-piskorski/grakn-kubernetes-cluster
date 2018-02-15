@@ -8,7 +8,7 @@ spec:
     matchLabels:
       app: grakn # has to match .spec.template.metadata.labels
   serviceName: grakn
-  replicas: 1
+  replicas: 2
   template:
     metadata:
       labels:
@@ -18,8 +18,6 @@ spec:
         - name: grakn
           image: graknlabs/grakn
           imagePullPolicy: IfNotPresent
-          #image: grakn-1.0.0
-          #imagePullPolicy: Never
           ports:
             - containerPort: 7000
               name: intra-node

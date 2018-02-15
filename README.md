@@ -1,5 +1,14 @@
 # grakn-kubernetes-cluster
 
+## use local grakn docker image (minikube)
+eval $(minikube docker-env)
+
+cd GRAKN_IMAGE_DIR
+
+docker build -t grakn .
+
+-> update `grakn-statefulset` image line accordingly
+
 ## spawn cluster
 kubectl create -f grakn-service.yaml
 

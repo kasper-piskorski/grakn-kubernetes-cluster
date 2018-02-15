@@ -5,8 +5,12 @@
 
 `kubectl create -f grakn-statefulset.yaml`
 
-## check grakn status
-`kubectl exec -ti grakn-0 -- ./grakn server status`
+## execute command on replica node
+`kubectl exec -ti grakn-<replica_no> -- <command>`
+
+E. g. log in to replica:
+
+`kubectl exec -ti grakn-<replica_no> -- /bin/bash`
 
 ## cluster scaling
 `kubectl scale --replicas=<NO_OF_NODES> statefulset/grakn`
